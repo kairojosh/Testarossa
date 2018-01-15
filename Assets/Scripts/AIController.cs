@@ -47,11 +47,19 @@ public class AIController : MonoBehaviour {
 		TimeStamp = Time.time + ReloadSpeed;
 	}
 
+    void Explode()
+    {
+        var exp = GetComponent<ParticleSystem>();
+        exp.Play();
+        Destroy(gameObject, 5);
+    }
+
     private void FixedUpdate()
     {
         //The bullet went past the enemy too fast, shorter than a frame, so I had to fix a frame
         if (Physics.CheckSphere(gameObject.transform.position, gameObject.transform.lossyScale.x, bulletMask))
         {
+           
             Destroy(gameObject);
             Debug.Log("Collision");
         }
