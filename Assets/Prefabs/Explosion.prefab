@@ -544,7 +544,7 @@ ParticleSystem:
     serializedVersion: 5
     enabled: 1
     type: 4
-    angle: 13.010012
+    angle: 19.829247
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -660,8 +660,8 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1000
-      minScalar: 500
+      scalar: 200
+      minScalar: 100
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -3318,7 +3318,7 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_Materials:
   - {fileID: 2100000, guid: afccdd28462b2944dae91445525faa60, type: 2}
-  - {fileID: 2100000, guid: c3f79318ef287a74488637ceaf542ec6, type: 2}
+  - {fileID: 2100000, guid: 10b5361cd467f124e8b5404f4d25cd35, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

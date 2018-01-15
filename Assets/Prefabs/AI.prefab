@@ -253,6 +253,8 @@ MonoBehaviour:
   stopDistance: 1
   player: {fileID: 4862896989396338, guid: 95a7a390797aebf4f9335f2396a8c35e, type: 2}
   pathReference: {fileID: 0}
+  ExplosionReference: {fileID: 1994733204052324, guid: d55933118afc5074bb7719c1ff62d97c,
+    type: 2}
 --- !u!143 &143715259085124914
 CharacterController:
   m_ObjectHideFlags: 1

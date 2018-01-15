@@ -26,7 +26,8 @@ public class AIController : MonoBehaviour {
 	private float TimeStamp;
 	private float speed = 5f;
     private CharacterController controller;
-    
+    public GameObject ExplosionReference; 
+
 
 
 
@@ -49,9 +50,15 @@ public class AIController : MonoBehaviour {
 
     void Explode()
     {
-        var exp = GetComponent<ParticleSystem>();
-        exp.Play();
-        Destroy(gameObject, 5);
+        Quaternion rotation = Quaternion.identity;
+        rotation.eulerAngles = new Vector3(270, 0, 0);
+        GameObject ExplosionPrefab = Instantiate(ExplosionReference, transform.position, rotation );
+        ParticleSystem explosion = ExplosionPrefab.GetComponent<ParticleSystem>();
+
+        Destroy(explosion, 0.5f);
+        
+
+
     }
 
     private void FixedUpdate()
@@ -59,7 +66,7 @@ public class AIController : MonoBehaviour {
         //The bullet went past the enemy too fast, shorter than a frame, so I had to fix a frame
         if (Physics.CheckSphere(gameObject.transform.position, gameObject.transform.lossyScale.x, bulletMask))
         {
-           
+            Explode();
             Destroy(gameObject);
             Debug.Log("Collision");
         }
